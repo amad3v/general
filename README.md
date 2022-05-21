@@ -1,15 +1,20 @@
 # General
-doxygen md main page ([source](https://stackoverflow.com/a/13442157))
+
+### doxygen md main page ([source](https://stackoverflow.com/a/13442157))
+
 ```ini
 INPUT                  = README.md other_sources
 USE_MDFILE_AS_MAINPAGE = README.md
 ```
 
 matlab enable hardware rendering (nvidia)
+
 ```matlab
 opengl('save', 'hardware')
 ```
-matlab launcher
+
+### matlab launcher
+
 ```bash
 #!/usr/bin/env bash
 #-------------------
@@ -25,4 +30,40 @@ export LD_PRELOAD=/usr/lib/libfreetype.so
 prime-run /PATH/TO/MATLAB -desktop
 
 exit 0
+```
+
+### github: setup multiple accounts
+
+From [section.io](https://www.section.io/engineering-education/using-multiple-ssh-keys-for-multiple-github-accounts/#how-to-manage-ssh-keys-on-github-accounts), __didn't work__
+
+```yml
+# USER_1 account - the default config
+Host github.com-USER_1
+   HostName github.com
+   User git
+   IdentityFile ~/.ssh/id_rsa_USER_1
+   
+# USER_2 account
+Host github.com-USER_2
+   HostName github.com
+   User git
+   IdentityFile ~/.ssh/id_rsa_USER_2
+```
+
+From [oanhnn](https://gist.github.com/oanhnn/80a89405ab9023894df7)
+
+```yaml
+# Default github account: USER_1
+Host github.com
+   HostName github.com
+   User git
+   IdentityFile ~/.ssh/id_rsa_USER_1
+   IdentitiesOnly yes
+
+# Other github account: USER_2
+Host github.com-USER_2
+   HostName github.com
+   User git
+   IdentityFile ~/.ssh/id_rsa_USER_2
+   IdentitiesOnly yes
 ```
