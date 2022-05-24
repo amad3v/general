@@ -1,0 +1,12 @@
+--- is_real_array.cc	2022-05-24 19:14:06.006315263 +0100
++++ is_real_array.cc.orig	2022-05-24 19:15:10.349646485 +0100
+@@ -40,8 +40,7 @@
+     for (octave_idx_type i = 0; i < nargin; i++) {
+       // args(i).ndims () should be always >= 2
+       if (args(i).ndims() < 2 ||
+-          !((args(i).is_numeric_type() && args(i).is_real_type()) ||
+-            args(i).is_bool_type())) {
++          !((args(i).isnumeric() && args(i).isreal()) || args(i).islogical())) {
+         retval = false;
+         break;
+       }
