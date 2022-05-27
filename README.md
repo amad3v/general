@@ -32,6 +32,11 @@ prime-run /PATH/TO/MATLAB -desktop
 exit 0
 ```
 
+### disable workspace trust in vscode
+```json
+"security.workspace.trust.enabled": false
+```
+
 ### github: setup multiple accounts
 
 From [section.io](https://www.section.io/engineering-education/using-multiple-ssh-keys-for-multiple-github-accounts/#how-to-manage-ssh-keys-on-github-accounts), __didn't work__
