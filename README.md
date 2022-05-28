@@ -7,7 +7,7 @@ INPUT                  = README.md other_sources
 USE_MDFILE_AS_MAINPAGE = README.md
 ```
 
-matlab enable hardware rendering (nvidia)
+### matlab enable hardware rendering (nvidia)
 
 ```matlab
 opengl('save', 'hardware')
