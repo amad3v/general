@@ -72,3 +72,12 @@ Host github.com-USER_2
    IdentityFile ~/.ssh/id_rsa_USER_2
    IdentitiesOnly yes
 ```
+### disable pc speaker
+```bash
+# disable for the session
+sudo rmmod pcspkr
+```
+To disable it permanently create file `nobeep.conf` under `/etc/modprobe.d/nobeep.conf` with the following content:
+```
+blacklist pcspkr
+```
