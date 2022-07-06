@@ -81,3 +81,18 @@ To disable it permanently create file `nobeep.conf` under `/etc/modprobe.d/nobee
 ```
 blacklist pcspkr
 ```
+
+### Superblock corrupted
+
+Get the list of all superblocks
+```bash
+dumpe2fs /dev/<partition> | grep -i superblock
+```
+Use a backup superblock
+```bash
+e2fsck -f -b 98304 /dev/<partition>
+```
+To mount the filesystem using a superblock (e.g. 98304)
+```bash
+mount -o sb=98304 /dev/<partition> <mount point>
+```
