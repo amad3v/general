@@ -96,3 +96,13 @@ To mount the filesystem using a superblock (e.g. 98304)
 ```bash
 mount -o sb=98304 /dev/<partition> <mount point>
 ```
+
+### Change `visudo` default editor
+```bash
+sudo visudo
+```
+Scroll to the bottom and add
+```bash
+# Full path is required
+Defaults editor=/usr/bin/vim
+```
