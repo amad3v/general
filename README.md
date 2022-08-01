@@ -106,3 +106,10 @@ Scroll to the bottom and add
 # Full path is required
 Defaults editor=/usr/bin/vim
 ```
+
+### Enable GDM session chooser
+Edit the `[daemon]` section of `/etc/gdm/gdm.conf`:
+```
+# full path to chooser.
+Chooser=/usr/bin/chooser --disabe-sounds
+```
