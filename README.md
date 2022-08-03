@@ -165,7 +165,6 @@ open the file
 replace
 ```json
   "nameLong": "VSCodium"
-  # ...
   "extensionsGallery": {
     "serviceUrl": "https://open-vsx.org/vscode/gallery",
     "itemUrl": "https://open-vsx.org/vscode/item"
@@ -174,7 +173,6 @@ replace
 with
 ```json
   "nameLong": "Code - OSS",
-  # ...
   "extensionsGallery": {
     "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
     "itemUrl": "https://marketplace.visualstudio.com/items"
