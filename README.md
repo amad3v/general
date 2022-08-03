@@ -157,3 +157,26 @@ add the following line, save and exit
 ```
 user_name ALL=(ALL) NOPASSWD: ALL
 ```
+### vscodium ms marketplace
+open the file
+```bash
+/opt/vscodium-bin/resources/app/product.json
+```
+replace
+```json
+  "nameLong": "VSCodium"
+  # ...
+  "extensionsGallery": {
+    "serviceUrl": "https://open-vsx.org/vscode/gallery",
+    "itemUrl": "https://open-vsx.org/vscode/item"
+  }
+```
+with
+```json
+  "nameLong": "Code - OSS",
+  # ...
+  "extensionsGallery": {
+    "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
+    "itemUrl": "https://marketplace.visualstudio.com/items"
+  }
+```
