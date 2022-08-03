@@ -113,3 +113,47 @@ Edit the `[daemon]` section of `/etc/gdm/gdm.conf`:
 # full path to chooser.
 Chooser=/usr/bin/chooser --disabe-sounds
 ```
+### disable KDE wallet
+```bash
+kwriteconfig5 --file kwalletrc --group 'Wallet' --key 'Enabled' 'false' 
+kwriteconfig5 --file kwalletrc --group 'Wallet' --key 'First Use' 'false'
+```
+### plasma-nm
+if connected but `plasma-nm` keeps trying to connect, uninstall, remove `kdewallet` and reinstall `plasma-nm`
+
+### useful groups
+```bash
+sudo usermod -aG network,audio,power,kvm,lp,storage,tty $USER
+```
+
+### grub
+```bash
+# install in device not partition
+# e.g. /dev/sda
+sudo grub-install <device>
+
+# configure
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+### `sudo` without password
+
+open sudoers file
+```bash
+sudo visudo
+```
+uncomment the line
+```bash
+%wheel ALL=(ALL) NOPASSWD: ALL
+```
+if it doesn't work check the files `/etc/sudoers.d/` and remove the one resetting this option.
+
+A better aproach is to set this option for the concerned user by creating a file in `/etc/sudoers.d` with the name of the user preceeded by a number (priority) and an underscore
+```bash
+# create file (replace `user_name`)
+sudo vim /etc/sudoers.d/00_user_name
+```
+add the following line, save and exit
+```
+user_name ALL=(ALL) NOPASSWD: ALL
+```
