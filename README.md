@@ -148,7 +148,7 @@ kwriteconfig5 --file kwalletrc --group 'Wallet' --key 'First Use' 'false'
 
 ### plasma-nm
 
-if connected but `plasma-nm` keeps trying to connect, uninstall, remove `kdewallet` and reinstall `plasma-nm`
+if connected but `plasma-nm` keeps trying to connect, uninstall it, remove `kdewallet` and reinstall `plasma-nm`
 
 ### useful groups
 
