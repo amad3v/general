@@ -229,3 +229,40 @@ with
     "itemUrl": "https://marketplace.visualstudio.com/items"
   }
 ```
+
+### black formatter
+Add as external tool
+```
+File > Settings > Tools > External Tools
+```
+Name: `Black`
+
+Program: `/usr/bin/black`
+
+Arguments: `$FilePath$`
+
+Working directory `$ProjectFileDir$`
+
+<img src="black/external_tool.png" width="573" />
+
+Setup file watcher (pro only)
+
+
+```
+File > Settings > Tools > File Watchers
+```
+
+Name: `Black`
+
+File type: `Python`
+
+Scope: `Project Files`
+
+Program: `/usr/bin/black`
+
+Arguments: `$FilePath$`
+
+Output paths to refresh: `$ProjectFileDir$`
+
+<img src="black/file_watcher.png" width="867" />
+
