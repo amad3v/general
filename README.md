@@ -266,3 +266,14 @@ Output paths to refresh: `$ProjectFileDir$`
 
 <img src="black/file_watcher.png" width="867" />
 
+
+### rust time code
+```rust
+use std::time::Instant;
+let now = Instant::now();
+
+/// Code to measure
+
+let elapsed = now.elapsed();
+println!("Elapsed: {:.2?}", elapsed);
+```
