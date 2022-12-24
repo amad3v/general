@@ -1,3 +1,5 @@
+[source](https://github.com/shalva97/kde-configuration-files)
+
 ### Some useful stuff
 
   + [hide title bar when windows are maximized](./scripts/setupKDE.fish#L6)
@@ -100,6 +102,7 @@
          * `.config/khotkeysrc`
 
       * Global Shortcuts
+
          * `.config/kglobalshortcutsrc`
 
    * Startup and Shutdown
@@ -236,6 +239,7 @@ plasma-apply-desktoptheme breeze-dark
 ## Screen Edges
 
 ### Active Screen Corners and Edges
+
 Corners are numbered like this:
 
 ```

@@ -1,3 +1,6 @@
+// Source:
+// https://gist.github.com/shalva97/a705590f2c0e309374cccc7f6bd667cb
+
 fun main() {
     val prefix = "kwriteconfig5 --file \$HOME/.config/kde.org/UserFeedback.org.kde.plasmashell.conf"
 
