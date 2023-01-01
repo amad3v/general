@@ -277,3 +277,9 @@ let now = Instant::now();
 let elapsed = now.elapsed();
 println!("Elapsed: {:.2?}", elapsed);
 ```
+
+### `passwd` config file
+```
+/etc/security/passwdqc.conf
+```
+found in `/etc/pam.d/system-auth`
