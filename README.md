@@ -283,3 +283,23 @@ println!("Elapsed: {:.2?}", elapsed);
 /etc/security/passwdqc.conf
 ```
 found in `/etc/pam.d/system-auth`
+
+### automount partition
+Use `systemd-tools` to automount a partition.
+Create a new `.mount` file in the `/etc/systemd/system/` directory. The file should have the same name as the mount path, with the `.mount` extension. If the mount path is `/mnt/partition`, then the file name should be `mnt-partition.mount`. Also add the user to the `disk` group to be able to read and write the partition.
+
+Content of the `.mount` file:
+
+```ini
+[Unit]
+Description=Mount data partition
+
+[Mount]
+What=/dev/partition_to_mount
+Where=/mnt/data
+Type=ext4
+Options=defaults
+
+[Install]
+WantedBy=local-fs.target
+```
