@@ -1,0 +1,106 @@
+################
+#    PACMAN    #
+################
+alias paccc='yes | sudo pacman -Scc'
+alias pacof='sudo pacman -Rncs $(pacman -Qtdq) 2> /dev/null'
+alias pacqs='pacman -Qs'
+alias pacrm='sudo pacman -Rncs'
+alias pacug='sudo pacman -Syyuu'
+alias pacup='sudo pacman -Syu'
+alias pacqq='pacman -Qq'
+alias pacqi='pacman -Qi'
+alias pacss='pacman -Ss'
+alias pacsi='pacman -Si'
+
+##############
+#    PARU    #
+##############
+alias paru='paru --skipreview --cleanafter'
+alias parin='paru -S'
+alias parup='paru -Syu'
+alias parug='paru -Syyuu'
+alias parrm='paru -Rncs'
+alias parcc='yes | paru -Scc'
+alias parqq='paru -Qq'
+alias parqi='paru -Qi'
+alias parss='paru -Ss'
+alias parsi='paru -Si'
+alias parof='paru -Rncs $(paru -Qtdq) 2> /dev/null'
+alias porphans='pacof && parof'
+
+################
+#    SYSTEM    #
+################
+alias chmodx='chmod u+x'
+alias c=clear
+alias rmrf='rm -rf'
+alias du='du -hcs'
+alias ll='exa -abghHlS --icons --octal-permissions'
+alias lld='exa -abdghHlS --icons --octal-permissions'
+alias svim='sudo vim'
+alias snvim='sudo nvim'
+alias dush='du -sh'
+alias dfh='df -Th'
+alias lsblk='lsblk -f'
+alias v=vim
+alias m=micro
+alias sv='sudo vim'
+alias sm='sudo micro'
+alias mv='mv -ni'
+alias fempty='find $(pwd) -empty -type f -delete'
+alias dempty='find $(pwd) -empty -type d -delete'
+
+################
+#    python    #
+################
+alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
+
+################
+#      tar     #
+################
+alias targz='tar xzvf'
+alias tarbz='tar xjvf'
+alias tarxz='tar xJvf'
+
+################
+#      git     #
+################
+alias gitlink="git config --get remote.origin.url"
+
+################
+#      TeX     #
+################
+alias tlmgr='${TEXMFDIST}/scripts/texlive/tlmgr.pl --usermode'
+
+################
+#    System    #
+################
+alias aria2c='aria2c -x10'
+alias ciommu='sudo dmesg | grep -e DMAR -e IOMMU'
+
+#############
+# systemctl #
+#############
+alias sctl=systemctl
+alias scstart='sudo sctl start'
+alias scstop='sudo sctl stop'
+alias screstart='sudo sctl restart'
+alias scenable='sudo sctl enable'
+alias scdisable='sudo sctl disable'
+alias scstatus='sctl status'
+alias bctl=bluetoothctl
+alias jctl=journalctl
+alias mounted='sctl -t mount'
+
+########
+# MISC #
+########
+alias ping='ping -c4'
+alias update-clam='sudo sctl start clamav-daemon && sudo freshclam --show-progress && sudo sctl stop clamav-daemon'
+alias pipupgrade="pip install --upgrade $(pip list | gawk 'NR>2 {print $1}' | sed -z 's/\n/ /g;s/ $/\n/')"
+alias lvup="lvim +LvimUpdate +q"
+alias lv=lvim
+alias winkey='sudo strings /sys/firmware/acpi/tables/MSDM'
+alias df='df -h'
+alias tobios='sudo systemctl reboot --firmware-setup'
+
