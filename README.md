@@ -303,3 +303,12 @@ Options=defaults
 [Install]
 WantedBy=local-fs.target
 ```
+
+### Add user to a group
+```bash
+sudo gpasswd -a $USER group_name
+```
+Or
+```bash
+sudo usermod -aG group_name $USER
+```
