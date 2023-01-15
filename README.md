@@ -312,3 +312,14 @@ Or
 ```bash
 sudo usermod -aG group_name $USER
 ```
+
+### mount partitons without password
+Add the user to the `storage` group and in `/etc/polkit-1/rules.d/` create a file named `00-npass-mount.rules`.
+
+```js
+polkit.addRule(function(action, subject) {
+    if (action.id.match("org.freedesktop.udisks2.") && subject.isInGroup("storage")) {
+        return polkit.Result.YES;
+    }
+});
+```
