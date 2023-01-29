@@ -323,3 +323,8 @@ polkit.addRule(function(action, subject) {
     }
 });
 ```
+
+### add `-shell-escape` to LyX
+ 1. `Tools` > `Preferences` > `File Handling` > `Converters`
+ 2. From `Converter Definitions`, select `LaTeX (pdflatex) -> PDF (pdflatex)`
+ 3. In the `Converter` box, change `pdflatex $$i` to `pdflatex -shell-escape $$i`
