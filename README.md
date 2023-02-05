@@ -14,6 +14,7 @@ opengl('save', 'hardware')
 ```
 
 ### extract matlab installation files
+
 ```bash
 unzip -X -K matlab_RXXXXy_glnxa64.zip
 ```
@@ -85,6 +86,7 @@ Host github.com-USER_2
 ### github: use multiple accounts
 
 The default account is used as usual. Any other account, replace `github.com` in the URL with the value of `Host`
+
 ```bash
 # git remote add origin git@<Host>:<user_name>/<repository>.git
 git remote add origin git@github.com-USER_2:user_name/repository.git
@@ -231,10 +233,13 @@ with
 ```
 
 ### black formatter
+
 Add as external tool
+
 ```
 File > Settings > Tools > External Tools
 ```
+
 Name: `Black`
 
 Program: `/usr/bin/black`
@@ -246,7 +251,6 @@ Working directory `$ProjectFileDir$`
 <img src="black/external_tool.png" width="573" />
 
 Setup file watcher (pro only)
-
 
 ```
 File > Settings > Tools > File Watchers
@@ -266,8 +270,8 @@ Output paths to refresh: `$ProjectFileDir$`
 
 <img src="black/file_watcher.png" width="867" />
 
-
 ### rust time code
+
 ```rust
 use std::time::Instant;
 let now = Instant::now();
@@ -279,14 +283,17 @@ println!("Elapsed: {:.2?}", elapsed);
 ```
 
 ### `passwd` config file
+
 ```
 /etc/security/passwdqc.conf
 ```
+
 found in `/etc/pam.d/system-auth`
 
 ### automount partition
+
 Use `systemd-tools` to automount a partition.
-Create a new `.mount` file in the `/etc/systemd/system/` directory. The file should have the same name as the mount path, with the `.mount` extension. If the mount path is `/mnt/partition`, then the file name should be `mnt-partition.mount`. Also add the user to the `disk` group to be able to read and write the partition.
+Create a new `.mount` file in the `/etc/systemd/system/` directory. The file should have the same name as the mount path, with the `.mount` extension. If the mount path is `/mnt/partition` , then the file name should be `mnt-partition.mount` . Also add the user to the `disk` group to be able to read and write the partition.
 
 Content of the `.mount` file:
 
@@ -305,16 +312,20 @@ WantedBy=local-fs.target
 ```
 
 ### Add user to a group
+
 ```bash
 sudo gpasswd -a $USER group_name
 ```
+
 Or
+
 ```bash
 sudo usermod -aG group_name $USER
 ```
 
 ### mount partitons without password
-Add the user to the `storage` group and in `/etc/polkit-1/rules.d/` create a file named `00-npass-mount.rules`.
+
+Add the user to the `storage` group and in `/etc/polkit-1/rules.d/` create a file named `00-npass-mount.rules` .
 
 ```js
 polkit.addRule(function(action, subject) {
@@ -325,12 +336,29 @@ polkit.addRule(function(action, subject) {
 ```
 
 ### add `-shell-escape` to LyX
+
  1. `Tools` > `Preferences` > `File Handling` > `Converters`
- 2. From `Converter Definitions`, select `LaTeX (pdflatex) -> PDF (pdflatex)`
+
+ 2. From `Converter Definitions` , select `LaTeX (pdflatex) -> PDF (pdflatex)`
+
  3. In the `Converter` box, change `pdflatex $$i` to `pdflatex -shell-escape $$i`
 
+### find `nice` level
+
+```bash
+ps -o pid,comm,nice -p PID
+```
+
+all processes
+
+```bash
+ps -eo pid,comm,nice
+```
+
 ### set the `nice` level for a process
-The nice level can range from -20 (highest priority) to 19 (lowest priority). Default is 0
+
+The nice level can range from -20 (highest priority) to 19 (lowest priority). Default is 0.
+
 ```bash
 sudo renice -n new_nice_level -p PID
 ```
