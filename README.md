@@ -328,3 +328,9 @@ polkit.addRule(function(action, subject) {
  1. `Tools` > `Preferences` > `File Handling` > `Converters`
  2. From `Converter Definitions`, select `LaTeX (pdflatex) -> PDF (pdflatex)`
  3. In the `Converter` box, change `pdflatex $$i` to `pdflatex -shell-escape $$i`
+
+### set the `nice` level for a process
+The nice level can range from -20 (highest priority) to 19 (lowest priority). Default is 0
+```bash
+sudo renice -n new_nice_level -p PID
+```
