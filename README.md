@@ -377,3 +377,18 @@ pgrep app-name
 ps -ef | grep app-name
 ```
 
+### reduce the CPU usage of an application
+
+limit the amount of CPU time an application can use
+
+```bash
+cpulimit -p <PID> -l <percentage>
+# start an app with limited cpu
+cpulimit -l <percentage> -e <app-name>
+```
+
+change the CPU affinity of a process (which CPU cores it is allowed to run on)
+
+```bash
+taskset -cp <CPU_list PID>
+```
