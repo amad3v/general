@@ -362,3 +362,17 @@ The nice level can range from -20 (highest priority) to 19 (lowest priority). De
 ```bash
 sudo renice -n new_nice_level -p PID
 ```
+
+### find the process ID (PID) of an application
+
+```bash
+pidof app-name
+```
+
+```bash
+pgrep app-name
+```
+
+```bash
+ps -ef | grep app-name
+```
