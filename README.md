@@ -392,3 +392,38 @@ change the CPU affinity of a process (which CPU cores it is allowed to run on)
 ```bash
 taskset -cp <CPU_list PID>
 ```
+
+### kvm: enable file sharing between Linux (host) and Windows (guest)
+
+1. Go to `Add Hardware` > `Channel`
+2. Under `Name`, select `org.spice-space.webdav.0`
+3. Click `Finish`
+   
+
+![hardware](kvm/00_setup_host.png)
+
+4. Start the VM in `virt-viewer`
+5. Got to `virt-viewer` menu `Preferences`
+   
+
+![preferences](kvm/01_preferences.png)
+
+6. Check `Share folder` and select a directory
+   
+
+![shared directory](kvm/02_set_shared_folder.png)
+
+7. In the guest system run `services.msc`, go to `SPICE webdav proxy`, set `Startup type` to `Automatic` and start the service.
+   
+
+![start service](kvm/03_start_service.png)
+
+8. Run the batch file `C:\Program Files\SPICE webdavd\map-drive.bat`
+   
+
+![map drive](kvm/04_map_drive.png)
+
+9.  A new network drive will be created
+    
+
+![preview](kvm/05_preview_in_pc.png)
