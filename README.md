@@ -427,3 +427,14 @@ taskset -cp <CPU_list PID>
     
 
 ![preview](kvm/05_preview_in_pc.png)
+
+### Ignore pylance warnings
+Source: [type check diagnostics settings](https://github.com/microsoft/pyright/blob/main/docs/configuration.md#type-check-diagnostics-settings)
+example:
+```json
+{
+    "python.analysis.diagnosticSeverityOverrides":{
+        "reportUndefinedVariable":"none"
+    }
+}
+```
